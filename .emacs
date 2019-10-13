@@ -21,6 +21,11 @@
 (setq locale-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
 
+;; misc configuration.
+
+(setq make-backup-files nil)
+(setq auto-save-default nil)
+
 ;; built-in modules.
 
 (require 'ido)
