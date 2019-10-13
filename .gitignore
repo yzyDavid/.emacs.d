@@ -1,0 +1,5 @@
+*~
+.lsp-session-v1
+eshell/
+*.elc
+ido.last
