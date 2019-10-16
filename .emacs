@@ -1,13 +1,13 @@
-;; Author: David Yu
+;;;; Author: David Yu
 
-;; set http sources instead of https.
+;;; set http sources instead of https.
 
 (require 'package)
 (add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/"))
 (add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/"))
 (package-initialize)
 
-;; copied from wiki, set charset to display utf8 chinese correctly with LANG=C.
+;;; copied from wiki, set charset to display utf8 chinese correctly with LANG=C.
 
 (set-language-environment "UTF-8")
 (set-default-coding-systems 'utf-8)
@@ -21,17 +21,17 @@
 (setq locale-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
 
-;; misc configuration.
+;;; misc configuration.
 
 (setq make-backup-files nil)
 (setq auto-save-default nil)
 
-;; built-in modules.
+;;; built-in modules.
 
 (require 'ido)
 (ido-mode t)
 
-;; managed by emacs.
+;;; managed by emacs.
 
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
@@ -48,7 +48,7 @@
  ;; If there is more than one, they won't work right.
  )
 
-;; use-package 3rd-party modules.
+;;; use-package 3rd-party modules.
 
 (require 'use-package)
 
@@ -69,6 +69,6 @@
 (use-package lsp-clients)
 (use-package lsp-ui)
 
-;; key bindings
+;;; key bindings
 
 (global-set-key (kbd "C-x g") 'magit-status)
