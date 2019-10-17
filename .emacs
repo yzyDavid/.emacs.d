@@ -55,20 +55,15 @@
 (setq lsp-enable-snippet nil)
 
 (use-package lsp-mode
-  :hook (c++-mode . lsp-mode)
-  :commands lsp)
-
-(use-package lsp-mode
-  :hook (c-mode . lsp-mode)
-  :commands lsp)
-
-(use-package lsp-mode
-  :hook (go-mode . lsp-mode)
+  :hook ((c++-mode . lsp-mode)
+	 (c-mode . lsp-mode)
+	 (go-mode . lsp-mode))
   :commands lsp)
 
 (use-package lsp-clients)
 (use-package lsp-ui)
 
-;;; key bindings
+(use-package magit
+  :bind ("C-x g" . magit-status))
 
-(global-set-key (kbd "C-x g") 'magit-status)
+;;; key bindings
