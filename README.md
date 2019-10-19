@@ -6,7 +6,7 @@ first configured on Gentoo Linux.
 
 ## Usage
 
-clone me as a separated dir, then symbolic link `.emacs` and `.emacs.d` to home dir.
+clone me as $HOME/.emacs.d
 
 language server should be install manually for `lsp-mode`, including:
 
