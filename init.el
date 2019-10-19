@@ -7,7 +7,7 @@
 (add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/"))
 (package-initialize)
 
-;;; copied from wiki, set charset to display utf8 chinese correctly with LANG=C.
+;;; copied from wiki, set charset to display UTF-8 Chinese characters correctly with LANG=C.
 
 (set-language-environment "UTF-8")
 (set-default-coding-systems 'utf-8)
@@ -58,6 +58,7 @@
   :hook ((c++-mode . lsp-mode)
 	 (c-mode . lsp-mode)
 	 (go-mode . lsp-mode))
+  :config (lsp)
   :commands lsp)
 
 (use-package lsp-clients)
@@ -65,5 +66,7 @@
 
 (use-package magit
   :bind ("C-x g" . magit-status))
+
+(use-package evil)
 
 ;;; key bindings
