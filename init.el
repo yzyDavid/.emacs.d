@@ -52,17 +52,13 @@
 
 (require 'use-package)
 
-(setq lsp-enable-snippet nil)
-
 (use-package lsp-mode
+  ;; we also have: `lsp-clients` `lsp-ui` packages.
   :hook ((c++-mode . lsp-mode)
 	 (c-mode . lsp-mode)
 	 (go-mode . lsp-mode))
-  :config (lsp)
+  :config (setq lsp-enable-snippet nil)
   :commands lsp)
-
-(use-package lsp-clients)
-(use-package lsp-ui)
 
 (use-package magit
   :bind ("C-x g" . magit-status))
@@ -70,3 +66,9 @@
 (use-package evil)
 
 ;;; key bindings
+
+;; <f5> through <f9> can be used.
+(global-set-key (kbd "<f5>") 'revert-buffer)
+(global-set-key (kbd "<f6>") 'compile)
+(global-set-key (kbd "<f7>") 'lsp)
+(global-set-key (kbd "<f8>") 'lsp-workspace-folders-add)
