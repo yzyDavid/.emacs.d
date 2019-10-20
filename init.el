@@ -40,7 +40,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (web-mode gnu-elpa-keyring-update evil yasnippet magit go-mode lsp-ui use-package lsp-mode))))
+    (company-lsp web-mode gnu-elpa-keyring-update evil yasnippet magit go-mode lsp-ui use-package lsp-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -51,6 +51,12 @@
 ;;; use-package 3rd-party modules.
 
 (require 'use-package)
+
+(use-package company)
+
+(use-package company-lsp
+  :after (company lsp-mode)
+  :config (push 'company-lsp company-backends))
 
 (use-package yasnippet)
 
