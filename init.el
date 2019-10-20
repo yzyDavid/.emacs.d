@@ -65,6 +65,8 @@
 
 (use-package evil
   :ensure t
+  :init (progn (evil-set-initial-state 'dired-mode 'emacs)
+	       (evil-set-initial-state 'eshell-mode 'emacs))
   :config (evil-mode t))
 
 ;;; key bindings
