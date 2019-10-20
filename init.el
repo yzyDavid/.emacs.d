@@ -63,7 +63,9 @@
 (use-package magit
   :bind ("C-x g" . magit-status))
 
-(use-package evil)
+(use-package evil
+  :ensure t
+  :config (evil-mode t))
 
 ;;; key bindings
 
