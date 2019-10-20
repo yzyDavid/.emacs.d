@@ -54,9 +54,7 @@
 
 (use-package lsp-mode
   ;; we also have: `lsp-clients` `lsp-ui` packages.
-  :hook ((c++-mode . lsp-mode)
-	 (c-mode . lsp-mode)
-	 (go-mode . lsp-mode))
+  :hook ((c++-mode c-mode go-mode) . lsp)
   :config (setq lsp-enable-snippet nil)
   :commands lsp)
 
@@ -67,6 +65,7 @@
   :ensure t
   :config (progn (evil-set-initial-state 'dired-mode 'emacs)
 	       (evil-set-initial-state 'eshell-mode 'emacs)
+	       (evil-set-initial-state 'scratch-mode 'emacs)
 	       (evil-mode t)))
 
 ;;; key bindings
