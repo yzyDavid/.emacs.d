@@ -52,10 +52,12 @@
 
 (require 'use-package)
 
+(use-package yasnippet)
+
 (use-package lsp-mode
   ;; we also have: `lsp-clients` `lsp-ui` packages.
   :hook ((c++-mode c-mode go-mode) . lsp)
-  :config (setq lsp-enable-snippet nil)
+  :after (yasnippet)
   :commands lsp)
 
 (use-package magit
