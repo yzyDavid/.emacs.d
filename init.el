@@ -3,8 +3,8 @@
 ;;; set http sources instead of https.
 
 (require 'package)
-(add-to-list 'package-archives '("gnu" . "http://elpa.gnu.org/packages/"))
-(add-to-list 'package-archives '("melpa-stable" . "http://stable.melpa.org/packages/"))
+(setq package-archives '(("gnu" . "http://elpa.emacs-china.org/gnu/")
+			 ("melpa-stable" . "http://elpa.emacs-china.org/melpa-stable/")))
 (package-initialize)
 
 ;;; copied from wiki, set charset to display UTF-8 Chinese characters correctly with LANG=C.
