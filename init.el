@@ -71,11 +71,12 @@
 
 (use-package evil
   :ensure t
-  :config (progn (evil-set-initial-state 'dired-mode 'emacs)
-	       (evil-set-initial-state 'eshell-mode 'emacs)
-	       (evil-set-initial-state 'scratch-mode 'emacs)
-	       (evil-set-initial-state 'help-mode 'emacs)
-	       (evil-mode t)))
+  :config (progn (dolist (mode '('dired-mode
+				 'eshell-mode
+				 'scratch-mode
+				 'help-mode))
+		   (evil-set-initial-state mode 'emacs))
+		 (evil-mode t)))
 
 ;;; key bindings
 
