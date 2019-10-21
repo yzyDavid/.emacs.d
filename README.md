@@ -10,8 +10,13 @@ clone me as $HOME/.emacs.d
 
 language server should be install manually for `lsp-mode`, including:
 
-- gopls
+- gopls (go)
 
-- clangd
+- clangd (C/C++)
 
-- pyls
+- pyls (Python)
+
+- rls (rust)
+
+Or else disable hooks to start `lsp` on those major mode.
+

@@ -40,7 +40,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (company-lsp web-mode gnu-elpa-keyring-update evil yasnippet magit go-mode lsp-ui use-package lsp-mode))))
+    (rust-mode company-lsp web-mode gnu-elpa-keyring-update evil yasnippet magit go-mode lsp-ui use-package lsp-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -62,7 +62,7 @@
 
 (use-package lsp-mode
   ;; we also have: `lsp-clients` `lsp-ui` packages.
-  :hook ((c++-mode c-mode go-mode python-mode) . lsp)
+  :hook ((c++-mode c-mode go-mode python-mode rust-mode) . lsp)
   :after (yasnippet)
   :commands lsp)
 
@@ -74,6 +74,7 @@
   :config (progn (evil-set-initial-state 'dired-mode 'emacs)
 	       (evil-set-initial-state 'eshell-mode 'emacs)
 	       (evil-set-initial-state 'scratch-mode 'emacs)
+	       (evil-set-initial-state 'help-mode 'emacs)
 	       (evil-mode t)))
 
 ;;; key bindings
