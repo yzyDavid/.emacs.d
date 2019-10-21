@@ -62,7 +62,7 @@
 
 (use-package lsp-mode
   ;; we also have: `lsp-clients` `lsp-ui` packages.
-  :hook ((c++-mode c-mode go-mode) . lsp)
+  :hook ((c++-mode c-mode go-mode python-mode) . lsp)
   :after (yasnippet)
   :commands lsp)
 

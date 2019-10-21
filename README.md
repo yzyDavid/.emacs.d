@@ -13,3 +13,5 @@ language server should be install manually for `lsp-mode`, including:
 - gopls
 
 - clangd
+
+- pyls
