@@ -62,7 +62,7 @@
 
 (use-package lsp-mode
   ;; we also have: `lsp-clients` `lsp-ui` packages.
-  :hook ((c++-mode c-mode go-mode python-mode rust-mode) . lsp)
+  :hook ((c++-mode c-mode go-mode python-mode rust-mode web-mode) . lsp)
   :after (yasnippet)
   :commands lsp)
 
@@ -79,6 +79,14 @@
 		 (evil-mode t)))
 
 (use-package yaml-mode)
+
+(use-package web-mode
+  :mode ("\\.html\\'"
+	 "\\.js\\'"
+	 "\\.ts\\'"
+	 "\\.jsx\\'"
+	 "\\.tsx\\'"
+	 "\\.css\\'"))
 
 ;;; key bindings
 
