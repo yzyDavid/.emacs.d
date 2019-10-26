@@ -40,7 +40,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (yaml-mode flymake rust-mode company-lsp web-mode gnu-elpa-keyring-update evil yasnippet magit go-mode lsp-ui use-package lsp-mode))))
+    (highlight-parentheses yaml-mode flymake rust-mode company-lsp web-mode gnu-elpa-keyring-update evil yasnippet magit go-mode lsp-ui use-package lsp-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -86,11 +86,14 @@
 	 "\\.ts\\'"
 	 "\\.jsx\\'"
 	 "\\.tsx\\'"
+	 "\\.vue\\'"
 	 "\\.css\\'"))
 
 ;;; key bindings
 
 ;; <f5> through <f9> can be used.
-(global-set-key (kbd "<f5>") 'revert-buffer)
+(global-set-key (kbd "<f5>") (lambda ()
+			       (interactive)
+				 (revert-buffer t t)))
 (global-set-key (kbd "<f7>") 'lsp-execute-code-action)
 (global-set-key (kbd "<f9>") 'compile)
