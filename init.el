@@ -25,6 +25,8 @@
 
 (setq make-backup-files nil)
 (setq auto-save-default nil)
+(setq-default indent-tabs-mode nil)
+(setq indent-tabs-mode nil)
 
 ;;; built-in modules.
 
