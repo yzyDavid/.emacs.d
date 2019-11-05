@@ -28,11 +28,6 @@
 (setq-default indent-tabs-mode nil)
 (setq indent-tabs-mode nil)
 
-;;; built-in modules.
-
-(require 'ido)
-(ido-mode t)
-
 ;;; managed by emacs.
 
 (custom-set-variables
@@ -50,9 +45,28 @@
  ;; If there is more than one, they won't work right.
  )
 
-;;; use-package 3rd-party modules.
+;;; use-package modules.
 
 (require 'use-package)
+
+;;; built-in modules.
+
+(use-package ido
+  :ensure t
+  :config (ido-mode t))
+
+(use-package man
+  :ensure t
+  :config (progn (set-face-attribute 'Man-overstrike
+                                     nil
+                                     :inherit 'bold
+                                     :foreground "blue")
+                 (set-face-attribute 'Man-underline
+                                     nil
+                                     :inherit 'underline
+                                     :foreground "magenta")))
+
+;;; 3rd-party modules.
 
 (use-package company)
 
