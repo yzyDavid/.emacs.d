@@ -27,6 +27,12 @@
 (setq auto-save-default nil)
 (setq-default indent-tabs-mode nil)
 (setq indent-tabs-mode nil)
+(menu-bar-mode -1)
+(setq-default c-basic-offset 4)
+(setq confirm-kill-emacs 'y-or-n-p)
+(setenv "PAGER" "/bin/cat")
+(show-paren-mode t)
+(setq show-paren-style 'parentheses)
 
 ;;; managed by emacs.
 
@@ -82,6 +88,18 @@
   :after (yasnippet)
   :commands lsp)
 
+(use-package lsp-ui
+  :after (lsp-mode)
+  :config (progn (set-face-attribute 'lsp-ui-sideline-current-symbol
+                                     nil
+                                     :foreground "brightblue")
+                 (set-face-attribute 'lsp-ui-sideline-symbol-info
+                                     nil
+                                     :foreground "brightblack")
+                 (set-face-attribute 'lsp-ui-doc-background
+                                     nil
+                                     :background "brightblack")))
+
 (use-package magit
   :bind ("C-x g" . magit-status))
 
@@ -111,5 +129,7 @@
 (global-set-key (kbd "<f5>") (lambda ()
 			       (interactive)
 				 (revert-buffer t t)))
+(global-set-key (kbd "<f6>") 'lsp-find-declaration)
 (global-set-key (kbd "<f7>") 'lsp-execute-code-action)
+(global-set-key (kbd "<f7>") 'lsp-format-buffer)
 (global-set-key (kbd "<f9>") 'compile)
