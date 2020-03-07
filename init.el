@@ -43,7 +43,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (highlight-parentheses yaml-mode flymake rust-mode company-lsp web-mode gnu-elpa-keyring-update evil yasnippet magit go-mode lsp-ui use-package lsp-mode))))
+    (utop highlight-parentheses yaml-mode flymake rust-mode company-lsp web-mode gnu-elpa-keyring-update evil yasnippet magit go-mode lsp-ui use-package lsp-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -105,10 +105,11 @@
 
 (use-package evil
   :ensure t
-  :config (progn (dolist (mode '('dired-mode
-				 'eshell-mode
-				 'scratch-mode
-				 'help-mode))
+  :config (progn (dolist (mode '(dired-mode
+				 eshell-mode
+				 scratch-mode
+				 help-mode
+                                 utop-mode))
 		   (evil-set-initial-state mode 'emacs))
 		 (evil-mode t)))
 
