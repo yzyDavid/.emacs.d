@@ -7,6 +7,8 @@
 			 ("melpa-stable" . "http://elpa.emacs-china.org/melpa-stable/")))
 (package-initialize)
 
+(setq load-path (cons (expand-file-name "lisp") load-path))
+
 ;;; copied from wiki, set charset to display UTF-8 Chinese characters correctly with LANG=C.
 
 (set-language-environment "UTF-8")
@@ -114,6 +116,8 @@
 		 (evil-mode t)))
 
 (use-package yaml-mode)
+
+(use-package llvm-mode)
 
 (use-package web-mode
   :mode ("\\.html\\'"
