@@ -136,5 +136,5 @@
 				 (revert-buffer t t)))
 (global-set-key (kbd "<f6>") 'lsp-find-declaration)
 (global-set-key (kbd "<f7>") 'lsp-execute-code-action)
-(global-set-key (kbd "<f7>") 'lsp-format-buffer)
+(global-set-key (kbd "<f8>") 'lsp-format-buffer)
 (global-set-key (kbd "<f9>") 'compile)
