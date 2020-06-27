@@ -100,7 +100,8 @@
                                      :foreground "brightblack")
                  (set-face-attribute 'lsp-ui-doc-background
                                      nil
-                                     :background "brightblack")))
+                                     :background "brightblack")
+                 (setq lsp-ui-sideline-enable nil)))
 
 (use-package magit
   :bind ("C-x g" . magit-status))
