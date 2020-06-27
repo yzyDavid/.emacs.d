@@ -45,7 +45,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (dockerfile-mode tuareg utop highlight-parentheses yaml-mode flymake rust-mode company-lsp web-mode gnu-elpa-keyring-update evil yasnippet magit go-mode lsp-ui use-package lsp-mode))))
+    (ace-window dockerfile-mode tuareg utop highlight-parentheses yaml-mode flymake rust-mode company-lsp web-mode gnu-elpa-keyring-update evil yasnippet magit go-mode lsp-ui use-package lsp-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -119,6 +119,9 @@
 (use-package yaml-mode)
 
 (use-package llvm-mode)
+
+(use-package ace-window
+  :config (global-set-key (kbd "C-x o") 'ace-window))
 
 (use-package web-mode
   :mode ("\\.html\\'"
