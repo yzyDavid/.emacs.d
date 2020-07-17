@@ -8,6 +8,7 @@
 (package-initialize)
 
 (setq load-path (cons (expand-file-name "lisp") load-path))
+(setq load-path (cons (expand-file-name ".emacs.d/lisp") load-path))
 
 ;;; copied from wiki, set charset to display UTF-8 Chinese characters correctly with LANG=C.
 
@@ -45,7 +46,7 @@
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
    (quote
-    (async ace-window dockerfile-mode tuareg utop highlight-parentheses yaml-mode flymake rust-mode company-lsp web-mode gnu-elpa-keyring-update evil yasnippet magit go-mode lsp-ui use-package lsp-mode))))
+    (lsp-metals sbt-mode scala-mode async ace-window dockerfile-mode tuareg utop highlight-parentheses yaml-mode flymake rust-mode company-lsp web-mode gnu-elpa-keyring-update evil yasnippet magit go-mode lsp-ui use-package lsp-mode))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -86,7 +87,7 @@
 
 (use-package lsp-mode
   ;; we also have: `lsp-clients` `lsp-ui` packages.
-  :hook ((c++-mode c-mode go-mode python-mode rust-mode web-mode tuareg-mode) . lsp)
+  :hook ((c++-mode c-mode go-mode python-mode rust-mode web-mode tuareg-mode scala-mode) . lsp)
   :after (yasnippet)
   :commands lsp)
 
@@ -117,8 +118,10 @@
 		 (evil-mode t)))
 
 (use-package yaml-mode)
-
 (use-package llvm-mode)
+(use-package scala-mode)
+(use-package sbt-mode)
+(use-package lsp-metals)
 
 (use-package ace-window
   :config (global-set-key (kbd "C-x o") 'ace-window))
