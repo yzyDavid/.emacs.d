@@ -5,9 +5,9 @@
 ;; Author: Feng Shu <tumashu@163.com>
 ;; Maintainer: Feng Shu <tumashu@163.com>
 ;; URL: https://github.com/tumashu/posframe
-;; Package-Version: 0.8.2
-;; Package-Commit: 395aca928b00c8f76aaeb65a85481c99e88c6873
-;; Version: 0.8.2
+;; Package-Version: 0.8.3
+;; Package-Commit: f8cb9d6329f96af62ee2e5f401c5430960cf81e1
+;; Version: 0.8.3
 ;; Keywords: convenience, tooltip
 ;; Package-Requires: ((emacs "26"))
 
@@ -219,7 +219,7 @@ frame.")
   (when (and
          (> emacs-major-version 26)
          (string-match-p "GTK3" system-configuration-features)
-         (let ((value (getenv "XDG_CURRENT_DESKTOP")))
+         (let ((value (or (getenv "XDG_CURRENT_DESKTOP") (getenv "DESKTOP_SESSION"))))
            (and (stringp value)
                 ;; It can be "ubuntu:GNOME".
                 (string-match-p "GNOME" value))))
@@ -1087,7 +1087,8 @@ bottom center.  The structure of INFO can be found in docstring of
   (cons (/ (- (plist-get info :parent-frame-width)
               (plist-get info :posframe-width))
            2)
-        (- 0
+        (- (plist-get info :parent-frame-height)
+           (plist-get info :posframe-height)
            (plist-get info :mode-line-height)
            (plist-get info :minibuffer-height))))
 
