@@ -84,9 +84,13 @@
 
 (use-package yasnippet)
 
+(use-package ccls
+  :hook ((c-mode c++-mode objc-mode cuda-mode) .
+         (lambda () (require 'ccls) (lsp))))
+
 (use-package lsp-mode
   ;; we also have: `lsp-clients` `lsp-ui` packages.
-  :hook ((c++-mode c-mode go-mode python-mode rust-mode web-mode tuareg-mode scala-mode) . lsp)
+  :hook ((go-mode python-mode rust-mode web-mode tuareg-mode scala-mode) . lsp)
   :after (yasnippet)
   :commands lsp)
 
