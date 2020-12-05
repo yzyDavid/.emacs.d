@@ -45,7 +45,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(ccls bazel-mode ess lsp-metals sbt-mode scala-mode async ace-window dockerfile-mode tuareg utop highlight-parentheses yaml-mode flymake rust-mode company-lsp web-mode gnu-elpa-keyring-update evil yasnippet magit go-mode lsp-ui use-package lsp-mode)))
+   '(sbt-mode lsp-metals lsp-treemacs magit-popup markdown-mode treemacs ess evil go-mode lsp-mode lsp-ui rust-mode scala-mode tuareg use-package utop web-mode yaml-mode magit ccls bazel-mode ace-window dockerfile-mode flymake company-lsp gnu-elpa-keyring-update)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
