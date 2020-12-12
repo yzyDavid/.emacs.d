@@ -44,8 +44,9 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
+ '(lsp-file-watch-threshold 65536)
  '(package-selected-packages
-   '(po-mode sbt-mode lsp-metals lsp-treemacs magit-popup markdown-mode treemacs ess evil go-mode lsp-mode lsp-ui rust-mode scala-mode tuareg use-package utop web-mode yaml-mode magit ccls bazel-mode ace-window dockerfile-mode flymake company-lsp gnu-elpa-keyring-update)))
+   '(po-mode sbt-mode lsp-metals lsp-treemacs magit-popup markdown-mode treemacs ess evil go-mode lsp-mode lsp-ui rust-mode scala-mode tuareg use-package utop web-mode yaml-mode magit ccls bazel-mode ace-window dockerfile-mode flymake gnu-elpa-keyring-update)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -76,22 +77,13 @@
 
 ;;; 3rd-party modules.
 
-(use-package company)
-
-(use-package company-lsp
-  :after (company lsp-mode)
-  :config (push 'company-lsp company-backends))
-
-(use-package yasnippet)
-
 (use-package ccls
-  :hook ((c-mode c++-mode objc-mode cuda-mode) .
-         (lambda () (require 'ccls) (lsp))))
+  :hook ((c-mode c++-mode objc-mode cuda-mode) . lsp))
 
 (use-package lsp-mode
   ;; we also have: `lsp-clients` `lsp-ui` packages.
   :hook ((go-mode python-mode rust-mode web-mode tuareg-mode scala-mode) . lsp)
-  :after (yasnippet)
+  :after (yasnippet ccls)
   :commands lsp)
 
 (use-package lsp-ui
