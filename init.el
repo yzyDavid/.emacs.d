@@ -64,6 +64,11 @@
   :ensure t
   :config (ido-mode t))
 
+(use-package exec-path-from-shell
+  :ensure t
+  :config (progn (setq exec-path-from-shell-variables '("PATH"))
+            (exec-path-from-shell-initialize)))
+
 (use-package man
   :ensure t
   :config (progn (set-face-attribute 'Man-overstrike
