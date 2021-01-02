@@ -46,7 +46,7 @@
  ;; If there is more than one, they won't work right.
  '(lsp-file-watch-threshold 65536)
  '(package-selected-packages
-   '(po-mode sbt-mode lsp-metals lsp-treemacs magit-popup markdown-mode treemacs ess evil go-mode lsp-mode lsp-ui rust-mode scala-mode tuareg use-package utop web-mode yaml-mode magit ccls bazel-mode ace-window dockerfile-mode flymake gnu-elpa-keyring-update)))
+   '(exec-path-from-shell po-mode sbt-mode lsp-metals lsp-treemacs magit-popup markdown-mode treemacs ess evil go-mode lsp-mode lsp-ui rust-mode scala-mode tuareg use-package utop web-mode yaml-mode magit ccls bazel-mode ace-window dockerfile-mode flymake gnu-elpa-keyring-update)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

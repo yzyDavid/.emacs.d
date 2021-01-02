@@ -4,3 +4,4 @@
 eshell/
 *.elc
 ido.last
+/transient/
