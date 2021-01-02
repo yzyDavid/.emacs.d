@@ -5,3 +5,4 @@ eshell/
 *.elc
 ido.last
 /transient/
+.dap-breakpoints
