@@ -83,7 +83,7 @@
 (use-package lsp-mode
   ;; we also have: `lsp-clients` `lsp-ui` packages.
   :hook ((go-mode python-mode rust-mode web-mode tuareg-mode scala-mode) . lsp)
-  :after (yasnippet ccls)
+  :after (ccls)
   :commands lsp)
 
 (use-package lsp-ui
