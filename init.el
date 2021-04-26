@@ -36,6 +36,7 @@
 (setenv "PAGER" "/bin/cat")
 (show-paren-mode t)
 (setq show-paren-style 'parentheses)
+(setq gdb-many-windows t)
 
 ;;; managed by emacs.
 
