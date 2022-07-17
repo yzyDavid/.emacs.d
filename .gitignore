@@ -1,0 +1,10 @@
+*~
+.*~
+.lsp-session-v1
+eshell/
+*.elc
+ido.last
+/transient/
+.dap-breakpoints
+.cache/
+/elpa/
