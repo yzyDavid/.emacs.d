@@ -143,6 +143,8 @@
 
 ;;; key bindings
 
+(setq grep-command "grep --exclude-dir=.git --exclude=*.pbtxt --exclude=*.pyc -nHFi -R . -e ")
+
 ;; <f5> through <f9> can be used.
 (global-set-key (kbd "<f5>") (lambda ()
 			       (interactive)
